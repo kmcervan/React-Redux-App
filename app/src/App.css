@@ -2,31 +2,152 @@
   text-align: center;
 }
 *{
-  border: 2px black solid;
+  /* color:white; */
+  /* background-color: black; */
+  /* border: 2px cyan solid; */
+ 
 }
 .App{
+  margin: auto;
+  width:90%;
+  padding: 50px 10px;
+  background-image: linear-gradient(90deg, black, 60%, #141414, #191919);
+  border-radius: 10px;
+  box-shadow: 10px 30px 40px rgba(0,0,0,.5);
+}
+.main-container{
   margin:auto;
   width:1000px;
 }
+/******** HEADER START *******/
 .header-container{
   width: 100%;
-  height:450px;
-  overflow: hidden;
+  height: 250px;
+  padding-top:50px;
+  /* padding-top: 101px; */
+  /* margin-top: 50px; */
+  background-image: linear-gradient(90deg, black, 60%, #141414, #191919);
+  background-image: url('eyes.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 840px;
+  background-color: black;
+  box-shadow: 12px 30px 40px rgba(0,0,0,.5);
+  border-radius: 200px;
 }
-.headerImg{
-  width:100%;
+h1{
+  color:white;
+  font-size: 3rem;
+}
+
+/*********** AnimeDetails START *******/
+.animes-container{
+  /* background-color: white; */
+  width: 100%;
+  font-size: 1rem;
   
 }
-.animes-container{
-  background-color: darkolivegreen;
-  width: 100%;
+.list-container{
+  /* width: 100%; */
+  background-color: white;
+  border-radius: 10px;
+  margin: 10px 0px;
   display: flex;
   flex-direction: row;
-
+}
+.h2-contain{
+  width: 50%;
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.animes-h2 a:hover{
+  color:#ac0005;
+}
+.animes-h2 a{
+  text-decoration: none;
+  color:black;
+}
+.img{
+  width: 50%;
+  position: relative;
+  width:50%;
+  /* display: flex;
+  justify-content: center; */
+}
+.img:hover .img{
+  opacity: 0.3;
+  background-color: black;
+}
+.img:hover .animesInfo{
+  opacity: 0.9;
+}
+.text{
+  color:white;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+.text p{
+  margin: 1px auto;
+}
+.text span{
+  font-weight: bold;
 }
 .animesImg{
-  width: 50%;
+  width:100%;
+  height: auto;
+  border-radius: 10px 0px 0px 10px;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
 }
 .animesInfo{
-  width: 50%;
+  width: 100%;
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* background-color: white; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+/******** AnimeList *******/
+.h2-animeList{
+  font-size: 3rem;
+  color: white;
+}
+
+/******** SearchBar *******/
+.form{
+  margin-top: -40px;
+  margin-bottom: 60px;
+}
+.searchBar{
+  width:500px;
+  height: 50px;
+  border-radius: 10px;
+  padding-left: 10px;
+  
+}
+.btn{
+
+  width: 70px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+}
+.fetching{
+  color:white;
 }

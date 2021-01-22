@@ -4,13 +4,28 @@ const AnimeDetails = ({info}) => {
     
     return (
         <div className='animes-container'>
-            <img className='animesImg' src={info.attributes.coverImage.original} />
-            <div className='animesInfo'>
-                <h2>{info.attributes.canonicalTitle}</h2>
-                <p>Average Rating: {info.attributes.averageRating}</p>
-                <p>Popularity Rank: {info.attributes.popularityRank}</p>
-                <p>Total Episodes: {info.attributes.totalLength}</p>
+
+            <div className='list-container'>
+                <div className='img'>
+                    <img className='animesImg' src={info.attributes.coverImage.original} /> 
+                
+                    <div className='animesInfo'>
+                        
+                        <div className='text'>
+                            <p>Average Rating: <span>{info.attributes.averageRating}</span></p>
+                            <p>Popularity Rank: <span>{info.attributes.popularityRank}</span></p>
+                            <p>Total Episodes: <span>{info.attributes.totalLength}</span></p>
+                        </div>
+                    
+                    </div>
+                </div>
+                <div className='h2-contain'>
+                    <h2 className='animes-h2'><a className='youtube-A-Tag' target='_blank' href={`https://www.youtube.com/watch?v=${info.attributes.youtubeVideoId}`}>{info.attributes.canonicalTitle}</a></h2>
+                    
+                </div>
             </div>
+            
+            
         </div>
     )
 };

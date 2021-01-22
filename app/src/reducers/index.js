@@ -1,18 +1,9 @@
-import { FETCH_ANIMELIST_START, FETCH_ANIMELIST_SUCCESS, FETCH_ANIMELIST_FAIL } from '../actions/index';
+import { FETCH_ANIMELIST_START, FETCH_ANIMELIST_SUCCESS, FETCH_ANIMELIST_FAIL, FIND_ANIME, FOUND_ANIME } from '../actions/index';
 
 const iniitalState = {
-    // canonicalTitle: '',
-    // averageRating: '',
-    // popularityRank: '',
-    // coverImage: {
-    //     original: '',
-    // },
-    // totalLength: '',
-    animes: [
-
-    ],
+    animes: [],
     isFetching: false,
-    error: ''
+    error: '',
     
 }
 
@@ -24,14 +15,6 @@ export const reducer = (state = iniitalState, action) => {
                 animes: [],
                 isFetching: true,
                 error: '',
-                
-                // canonicalTitle: '',
-                // averageRating: '',
-                // popularityRank: '',
-                // coverImage: {
-                //     original: '',
-                // },
-                // totalLength: '',
             });
         case(FETCH_ANIMELIST_SUCCESS):
             return({
@@ -39,14 +22,6 @@ export const reducer = (state = iniitalState, action) => {
                 animes: action.payload,
                 isFetching: false,
                 error: '',
-
-                // canonicalTitle: action.payload,
-                // averageRating: action.payload,
-                // popularityRank: action.payload,
-                // coverImage: {
-                //     original: action.payload,
-                // },
-                // totalLength: action.payload,
             });
         case(FETCH_ANIMELIST_FAIL):
             return({
@@ -54,6 +29,20 @@ export const reducer = (state = iniitalState, action) => {
                 error: action.payload,
                 isFetching: false
             });
+        case(FIND_ANIME):
+            return({
+                ...state,
+                animes: [],
+                isFetching: true,
+                error: '',
+            });
+        case(FOUND_ANIME):
+            return({
+                ...state,
+                animes: action.payload,
+                isFetching: false,
+                error: '',
+            })
         default:
             return state;
     }
